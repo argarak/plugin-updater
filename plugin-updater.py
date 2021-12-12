@@ -92,32 +92,29 @@ class Downloader:
     # i.e. old-plugin-dir
     if download:
       if not os.path.isdir(self.pluginDir):
-        console.print("plugin-dir does not exist! please verify plugins.yml!", style="bold red")
+        progress.console.print("plugin-dir does not exist! please verify plugins.yml!", style="bold red")
         exit()
 
       oldPluginFiles = glob(os.path.join(self.pluginDir, "*.jar"))
 
       if os.path.isdir(self.oldPluginDir):
-        console.print("")
-
         for oldPluginFile in oldPluginFiles:
           movefrom = oldPluginFile
           moveto = os.path.join(self.oldPluginDir, os.path.split(oldPluginFile)[-1:][0])
 
-          console.print("moving " + movefrom + " to " + moveto + "...", style="italic blue")
+          progress.console.print("moving " + movefrom + " to " + moveto + "...", style="italic blue")
 
           os.rename(movefrom, moveto)
       else:
-        console.print("old-plugin-dir does not exist! please verify plugins.yml!", style="bold red")
+        progress.console.print("old-plugin-dir does not exist! please verify plugins.yml!", style="bold red")
         exit()
-    else:
-      console.print("")
+
     for downloadURL in self.downloads:
       if download:
         self.downloadFile(downloadURL)
         progress.advance(task)
       else:
-        console.print(downloadURL)
+        progress.console.print(downloadURL)
 
 @click.command()
 @click.option("--config", default="plugins.yml", help="path to plugins.yml or compatible config file")
