@@ -1,0 +1,32 @@
+config:
+  plugin-dir: /tmp/plugins
+  old-plugin-dir: /tmp/plugins-old
+
+downloads:
+  bukkit:
+  - url: https://dev.bukkit.org/projects/worldedit
+  - url: https://dev.bukkit.org/projects/worldguard
+  - url: https://dev.bukkit.org/projects/multiverse-core
+  - url: https://dev.bukkit.org/projects/multiverse-portals
+  - url: https://dev.bukkit.org/projects/multiverse-netherportals
+  - url: https://dev.bukkit.org/projects/multiverse-inventories
+  - url: https://dev.bukkit.org/projects/holographic-displays
+  - url: https://dev.bukkit.org/projects/silkspawners
+  - url: https://dev.bukkit.org/projects/discordsrv
+  - url: https://dev.bukkit.org/projects/coreprotect
+  - url: https://dev.bukkit.org/projects/dead-chest
+
+  jenkins:
+  - url: https://ci.lucko.me/job/LuckPerms
+    match: [ Bukkit ]
+    unmatch: [ Bukkit-Legacy ]
+  - url: https://ci.ender.zone/job/LWCX/lastStableBuild
+
+  github:
+  - url: https://github.com/EssentialsX/Essentials/releases
+    match: [ EssentialsX- ]
+  - url: https://github.com/EssentialsX/Essentials/releases
+    match: [ Chat ]
+  - url: https://github.com/EssentialsX/Essentials/releases
+    match: [ Spawn ]
+  - url: https://github.com/NEZNAMY/TAB/releases
